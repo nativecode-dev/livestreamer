@@ -6,6 +6,11 @@
 [![David](https://img.shields.io/david/nativecode-dev/livestreamer.svg?style=flat-square&label=deps)](https://www.npmjs.com/package/livestreamer)
 [![David](https://img.shields.io/david/dev/nativecode-dev/livestreamer.svg?style=flat-square&label=devdeps)](https://www.npmjs.com/package/livestreamer)
 
+# Installation
+```
+npm install --save livestreamer
+```
+
 # License
 Copyright 2017 NativeCode Development <support@nativecode.com>
 
