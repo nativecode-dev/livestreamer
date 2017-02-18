@@ -1,0 +1,43 @@
+{
+  "livestreamer": {
+    "bin": "/usr/bin/livestreamer",
+    "configuration": "~/.livestreamerrc",
+    "loglevel": "warning",
+    "plugins": {
+      "options": {
+        "crunchyroll": {
+          "password": null,
+          "username": null
+        },
+        "livestation": {
+          "email": null,
+          "password": null
+        },
+        "twitch": {
+          "cookie": null,
+          "token": null
+        },
+        "ustream": {
+          "paassword": null
+        }
+      },
+      "path": null
+    },
+    "stream": {
+      "outdir": "~/livestreamer",
+      "overwrite": true,
+      "qualities": [
+        "best",
+        "1080p60",
+        "1080p30",
+        "720p60",
+        "720p30"
+      ],
+      "retries": {
+        "attempts": 10,
+        "delay": 5
+      },
+      "types": "rtmp,hls,hds,http,akamaihd"
+    }
+  }
+}

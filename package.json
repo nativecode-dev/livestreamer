@@ -4,14 +4,18 @@
   "homepage": "https://github.com/nativecode-dev/livestreamer",
   "license": "MIT",
   "main": "lib/index.js",
-  "name": "livestreamer",
-  "version": "1.0.0",
+  "name": "livestreamer-core",
+  "version": "0.0.1",
   "bugs": {
     "email": "support@nativecode.com",
     "url": "https://github.com/nativecode-dev/livestreamer/issues"
   },
   "dependencies": {
-    "debug": "^2.6.1"
+    "common-locations": "^2.3.3",
+    "debug": "^2.6.1",
+    "memory-streams": "^0.1.1",
+    "merge": "^1.2.0",
+    "mkdirp": "^0.5.1"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.22.0",
@@ -39,7 +43,9 @@
     "build": "gulp build",
     "clean": "gulp clean",
     "prepublish": "gulp clean && gulp test",
+    "prestart": "gulp build",
     "pretest": "gulp clean",
+    "start": "node lib/",
     "test": "gulp test"
   }
 }
