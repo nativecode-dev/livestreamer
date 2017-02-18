@@ -1,0 +1,45 @@
+{
+  "author": "NativeCode Development <support@nativecode.com> (https://www.nativecode.com)",
+  "description": "Provides an API around livestreamer.",
+  "homepage": "https://github.com/nativecode-dev/livestreamer",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "name": "livestreamer",
+  "version": "1.0.0",
+  "bugs": {
+    "email": "support@nativecode.com",
+    "url": "https://github.com/nativecode-dev/livestreamer/issues"
+  },
+  "dependencies": {
+    "debug": "^2.6.1"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.22.0",
+    "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-clean": "^0.3.2",
+    "gulp-configly": "^1.0.1",
+    "gulp-debug": "^3.0.0",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-mocha": "^3.0.1",
+    "mocha": "^3.2.0"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nativecode-dev/livestreamer.git"
+  },
+  "scripts": {
+    "build": "gulp build",
+    "clean": "gulp clean",
+    "prepublish": "gulp clean && gulp test",
+    "pretest": "gulp clean",
+    "test": "gulp test"
+  }
+}
