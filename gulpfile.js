@@ -20,6 +20,7 @@ gulp.task('build:json', () => {
 
 gulp.task('clean', () => {
   return gulp.src($.sources.clean)
+    .pipe(plugins.debug())
     .pipe(plugins.clean())
 })
 
