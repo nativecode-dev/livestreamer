@@ -1,10 +1,10 @@
-# object.validate
+# livestreamer
 
-[![npm](https://img.shields.io/npm/v/object.validate.svg?style=flat-square)](https://www.npmjs.com/package/object.validate)
-[![Travis](https://img.shields.io/travis/nativecode-dev/object.validate.svg?style=flat-square&label=travis)](https://travis-ci.org/nativecode-dev/object.validate)
-[![TeamCity](https://img.shields.io/teamcity/https/build.nativecode.com/s/objectvalidate_continuous.svg?style=flat-square&label=teamcity)](https://build.nativecode.com/viewType.html?buildTypeId=objectvalidate_continuous&guest=1)
-[![David](https://img.shields.io/david/nativecode-dev/object.validate.svg?style=flat-square&label=deps)](https://www.npmjs.com/package/object.validate)
-[![David](https://img.shields.io/david/dev/nativecode-dev/object.validate.svg?style=flat-square&label=devdeps)](https://www.npmjs.com/package/object.validate)
+[![npm](https://img.shields.io/npm/v/livestreamer.svg?style=flat-square)](https://www.npmjs.com/package/livestreamer)
+[![Travis](https://img.shields.io/travis/nativecode-dev/livestreamer.svg?style=flat-square&label=travis)](https://travis-ci.org/nativecode-dev/livestreamer)
+[![TeamCity](https://img.shields.io/teamcity/https/build.nativecode.com/s/livestreamer_continuous.svg?style=flat-square&label=teamcity)](https://build.nativecode.com/viewType.html?buildTypeId=livestreamer_continuous&guest=1)
+[![David](https://img.shields.io/david/nativecode-dev/livestreamer.svg?style=flat-square&label=deps)](https://www.npmjs.com/package/livestreamer)
+[![David](https://img.shields.io/david/dev/nativecode-dev/livestreamer.svg?style=flat-square&label=devdeps)](https://www.npmjs.com/package/livestreamer)
 
 # License
 Copyright 2017 NativeCode Development <support@nativecode.com>
