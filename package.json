@@ -4,7 +4,7 @@
   "homepage": "https://github.com/nativecode-dev/livestreamer",
   "license": "MIT",
   "main": "lib/index.js",
-  "name": "livestreamer-core",
+  "name": "livestreamer",
   "version": "0.0.1",
   "bugs": {
     "email": "support@nativecode.com",
