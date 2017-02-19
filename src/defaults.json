@@ -24,11 +24,11 @@
     "outdir": "~/livestreamer",
     "overwrite": true,
     "qualities": [
+      "best",
       "1080p60",
       "1080p30",
       "720p60",
-      "720p30",
-      "best"
+      "720p30"
     ],
     "types": null
   }

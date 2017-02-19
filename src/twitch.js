@@ -1,5 +1,5 @@
 const debug = require('debug')('nativecode:livestreamer')
-const exec = require('child_process').execSync
+const exec = require('child_process').exec
 const path = require('path')
 
 const LiveStreamer = require('./livestreamer')
@@ -15,26 +15,20 @@ class TwitchStreamer extends LiveStreamer {
     return path.join(this.options.stream.outdir, `${this.channel}-${super.filename()}`)
   }
 
-  start(resolve, reject) {
-    const builder = this.prepare()
+  stream(quality) {
+    return new Promise((resolve, reject) => {
+      const builder = this.prepare()
 
-    if (this.settings.token) {
-      builder.option('--twitch-oauth-token', this.settings.token)
-    }
-
-    this.qualities.some(quality => {
-      try {
-        const command = builder.build(`twitch.tv/${this.channel}`, quality)
-        debug('trying -> %s', command)
-        exec(command)
-        resolve()
-        return true
-      } catch (e) {
-        return false
+      if (this.settings.token) {
+        builder.option('--twitch-oauth-token', this.settings.token)
       }
-    })
 
-    reject()
+      const command = builder.build(`twitch.tv/${this.channel}`, quality)
+      debug('trying -> %s', command)
+      const process = exec(command)
+      process.on('error', () => reject())
+      process.on('close', () => resolve())
+    })
   }
 }
 

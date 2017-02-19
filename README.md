@@ -29,7 +29,7 @@ const options = {
 
 const TwitchStreamer = require('livestreamer').TwitchStreamer
 const twitch = new TwitchStreamer('<channel_name>', options)
-const promise = twitch.start()
+const promise = twitch.start('best')
 ```
 
 ## Complete Options

@@ -47,8 +47,8 @@ class LiveStreamer {
     return builder
   }
 
-  start() {
-    return new Promise(this.stream)
+  start(quality) {
+    return this.stream(quality)
   }
 }
 
