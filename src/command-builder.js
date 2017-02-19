@@ -5,17 +5,24 @@ const path = require('path')
 class CommandBuilder {
   constructor(executable) {
     this.args = []
-    this.executable = executable
+    this.executable = executable.includes(' ') ? `"${executable}"` : executable
+    debug('executable -> %s', this.executable)
   }
 
   build(url, quality) {
-    return [this.executable.includes(' ') ? `"${this.executable}"` : this.executable, this.args.join(' '), url, quality].join(' ')
+    return [this.executable, this.args.join(' '), url, quality].join(' ')
   }
 
   option(name, value) {
     this.args.push(name)
-    this.args.push(value.includes(' ') ? `"${value}"` : value)
-    debug('option -> %s=%s', name, value)
+
+    if (value) {
+      const paramvalue = value.includes(' ') ? `"${value}"` : value
+      this.args.push(paramvalue)
+      debug('option -> [%s]=%s', name.replace('--', ''), paramvalue)
+    } else {
+      debug('option -> [%s]', name.replace('--', ''))
+    }
   }
 }
 

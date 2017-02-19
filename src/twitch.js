@@ -3,7 +3,6 @@ const exec = require('child_process').execSync
 const path = require('path')
 
 const LiveStreamer = require('./livestreamer')
-const CommandBuilder = require('./command-builder')
 
 class TwitchStreamer extends LiveStreamer {
   constructor(channel, options) {
@@ -16,10 +15,8 @@ class TwitchStreamer extends LiveStreamer {
     return path.join(this.options.stream.outdir, `${this.channel}-${super.filename()}`)
   }
 
-  stream() {
-    const builder = new CommandBuilder(this.options.bin)
-
-    builder.option('--output', this.filename())
+  start() {
+    const builder = this.prepare()
 
     if (this.settings.token) {
       builder.option('--twitch-oauth-token', this.settings.token)

@@ -15,9 +15,61 @@ npm install --save livestreamer
 
 ## Twitch
 ```javascript
+const options = {
+  bin: 'C:\\Program Files (x86)\\Livestreamer\\livestreamer.exe',
+  plugins: {
+    twitch: {
+      token: '<valid_token>'
+    }
+  },
+  stream: {
+    outdir: 'D:\\Streams'
+  }
+}
+
 const TwitchStreamer = require('livestreamer').TwitchStreamer
-const twitch = new TwitchStreamer('channel_name')
-twitch.stream()
+const twitch = new TwitchStreamer('<channel_name>', options)
+twitch.start()
+```
+
+## Complete Options
+```json
+{
+  "bin": "/usr/bin/livestreamer",
+  "configuration": "~/.livestreamerrc",
+  "loglevel": "warning",
+  "plugins": {
+    "crunchyroll": {
+      "password": null,
+      "username": null
+    },
+    "livestation": {
+      "email": null,
+      "password": null
+    },
+    "twitch": {
+      "cookie": null,
+      "token": null
+    },
+    "ustream": {
+      "paassword": null
+    }
+  },
+  "stream": {
+    "excludes": [],
+    "outdir": "~/livestreamer",
+    "overwrite": true,
+    "qualities": [
+      "1080p60",
+      "1080p30",
+      "720p60",
+      "720p30",
+      "best"
+    ],
+    "types": "rtmp,hls,hds,http,akamaihd"
+  }
+}
+
 ```
 
 # License

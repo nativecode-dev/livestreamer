@@ -6,7 +6,7 @@ if (process.argv[2]) {
   switch (process.argv[2]) {
     case 'twitch':
       const twitch = new TwitchStreamer(process.argv[3])
-      twitch.stream()
+      twitch.start()
       break;
   }
 } else {
