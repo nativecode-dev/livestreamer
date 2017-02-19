@@ -5,7 +5,7 @@
   "license": "MIT",
   "main": "lib/index.js",
   "name": "livestreamer",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "bugs": {
     "email": "support@nativecode.com",
     "url": "https://github.com/nativecode-dev/livestreamer/issues"
@@ -13,7 +13,6 @@
   "dependencies": {
     "common-locations": "^2.3.3",
     "debug": "^2.6.1",
-    "memory-streams": "^0.1.1",
     "merge": "^1.2.0",
     "mkdirp": "^0.5.1"
   },
@@ -27,6 +26,7 @@
     "gulp-debug": "^3.0.0",
     "gulp-load-plugins": "^1.5.0",
     "gulp-mocha": "^3.0.1",
+    "gulp-sourcemaps": "^2.4.1",
     "mocha": "^3.2.0"
   },
   "engines": {

@@ -7,8 +7,10 @@ gulp.task('build', ['build:js', 'build:json'])
 
 gulp.task('build:js', () => {
   return gulp.src($.sources.js)
+    .pipe(plugins.sourcemaps.init())
     .pipe(plugins.debug($.debug.js))
     .pipe(plugins.babel($.plugins.babel))
+    .pipe(plugins.sourcemaps.write())
     .pipe(gulp.dest($.destination.lib))
 })
 
