@@ -46,6 +46,10 @@ class LiveStreamer {
 
     return builder
   }
+
+  start() {
+    return new Promise(this.stream)
+  }
 }
 
 module.exports = LiveStreamer
