@@ -1,3 +1,4 @@
+const debug = require('debug')('nativecode:livestreamer:command-builder')
 const mkdir = require('mkdirp')
 const path = require('path')
 
@@ -13,7 +14,8 @@ class CommandBuilder {
 
   option(name, value) {
     this.args.push(name)
-    this.args.push(value)
+    this.args.push(value.includes(' ') ? `"${value}"` : value)
+    debug('option -> %s=%s', name, value)
   }
 }
 
