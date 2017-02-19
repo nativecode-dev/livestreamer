@@ -11,6 +11,15 @@
 npm install --save livestreamer
 ```
 
+# Usage
+
+## Twitch
+```javascript
+const TwitchStreamer = require('livestreamer').TwitchStreamer
+const twitch = new TwitchStreamer('channel_name')
+twitch.stream()
+```
+
 # License
 Copyright 2017 NativeCode Development <support@nativecode.com>
 
