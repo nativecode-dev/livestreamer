@@ -1,15 +1,14 @@
-const config = require('./config')
 const debug = require('debug')('nativecode:livestreamer')
-const exec = require('child_process').execSync
-const fs = require('fs')
+const defaults = require('./conf/defaults')
+const exec = require('child_process').exec
+const merge = require('merge').recursive
 const mkdirp = require('mkdirp')
-const path = require('path')
 
 const CommandBuilder = require('./command-builder')
 
 class LiveStreamer {
   constructor(options) {
-    this.options = config(options)
+    this.options = merge(true, defaults, options || {})
     this.qualities = this.options.stream.qualities
 
     if (fs.existsSync(this.options.stream.outdir) === false) {
@@ -18,11 +17,7 @@ class LiveStreamer {
     }
   }
 
-  filename() {
-    return Date.now() + '.avi'
-  }
-
-  prepare() {
+  builder() {
     const builder = new CommandBuilder(this.options.bin)
 
     builder.option('--loglevel', this.options.loglevel)
@@ -47,8 +42,30 @@ class LiveStreamer {
     return builder
   }
 
+  filename() {
+    return Date.now() + this.options.extension
+  }
+
   start(quality) {
-    return this.stream(quality)
+    const command = this.command(this.builder(), quality)
+
+    return new Promise((resovle, reject) => {
+      debug('trying -> %s', command)
+      try {
+        const process = exec(command)
+        process.stdout.on('data', () => debug(data.toString()))
+        process.on('error', () => reject())
+        process.on('close', (code, signal) => {
+          if (code === 0) {
+            resolve()
+          } else {
+            reject(signal)
+          }
+        })
+      } catch (e) {
+        reject(e)
+      }
+    })
   }
 }
 

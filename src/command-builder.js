@@ -1,6 +1,4 @@
 const debug = require('debug')('nativecode:livestreamer:command-builder')
-const mkdir = require('mkdirp')
-const path = require('path')
 
 class CommandBuilder {
   constructor(executable) {
@@ -23,6 +21,10 @@ class CommandBuilder {
     } else {
       debug('option -> [%s]', name.replace('--', ''))
     }
+  }
+
+  reset() {
+    this.args = []
   }
 }
 
