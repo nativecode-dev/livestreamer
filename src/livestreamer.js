@@ -1,6 +1,7 @@
 const debug = require('debug')('nativecode:livestreamer')
 const defaults = require('./conf/defaults')
 const exec = require('child_process').exec
+const fs = require('fs')
 const merge = require('merge').recursive
 const mkdirp = require('mkdirp')
 
