@@ -37,6 +37,7 @@ const promise = twitch.start('best')
 {
   "bin": "/usr/bin/livestreamer",
   "configuration": "~/.livestreamerrc",
+  "extension": ".mp4",
   "loglevel": "warning",
   "plugins": {
     "crunchyroll": {
