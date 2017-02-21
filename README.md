@@ -11,6 +11,10 @@
 npm install --save livestreamer
 ```
 
+# Requirements
+
+You must have `livestreamer` 1.11+ in order for `TwitchStreamer` to work correctly.
+
 # Usage
 
 ## Twitch
