@@ -8,7 +8,7 @@ module.exports = {
   asroot: false,
   bin: executable,
   configuration: null,
-  extension: '.mp4',
+  extension: '.ts',
   loglevel: 'warning',
   plugins: {
     crunchyroll: {
