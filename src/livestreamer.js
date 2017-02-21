@@ -54,12 +54,20 @@ class LiveStreamer {
       debug('trying -> %s', command)
       try {
         const process = exec(command)
-        process.on('error', () => reject())
-        process.on('close', (code, signal) => {
+
+        process.on('error', (code, signal) => reject({
+          code: code,
+          signal: signal
+        }))
+
+        process.on('exit', (code, signal) => {
           if (code === 0) {
             resolve()
           } else {
-            reject(signal)
+            reject({
+              code: code,
+              signal: signal
+            })
           }
         })
       } catch (e) {
