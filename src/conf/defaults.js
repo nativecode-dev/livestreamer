@@ -5,6 +5,7 @@ const executable = os.platform() === 'win32' ?
   '/usr/bin/livestreamer'
 
 module.exports = {
+  asroot: false,
   bin: executable,
   configuration: null,
   extension: '.mp4',

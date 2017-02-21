@@ -24,6 +24,10 @@ class LiveStreamer {
     builder.option('--loglevel', this.options.loglevel)
     builder.option('--output', this.filename())
 
+    if (this.options.asroot) {
+      builder.option('--yes-run-as-root')
+    }
+
     if (this.options.configuration) {
       builder.option('--config', this.options.configuration)
     }
