@@ -54,7 +54,7 @@ class LiveStreamer {
       debug('trying -> %s', command)
       try {
         const process = exec(command)
-        process.stdout.on('data', () => debug(data.toString()))
+        process.stdout.on('data', data => debug(data.toString()))
         process.on('error', () => reject())
         process.on('close', (code, signal) => {
           if (code === 0) {
