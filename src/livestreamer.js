@@ -53,7 +53,14 @@ class LiveStreamer {
     return new Promise((resovle, reject) => {
       debug('trying -> %s', command)
       try {
-        const process = exec(command)
+        const process = exec(command, (error, stdout, stderr) => {
+          if (error) {
+            debug('error -> %s', error)
+          }
+
+          debug('stdout -> %s', stdout)
+          debug('stderr -> %s', stderr)
+        })
 
         process.on('error', (code, signal) => reject({
           code: code,
