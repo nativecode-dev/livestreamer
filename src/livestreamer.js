@@ -54,7 +54,7 @@ class LiveStreamer {
   start(quality) {
     const command = this.command(this.builder(), quality)
 
-    return new Promise((resovle, reject) => {
+    return new Promise((resolve, reject) => {
       debug('trying -> %s', command)
       try {
         const process = exec(command, (error, stdout, stderr) => {
